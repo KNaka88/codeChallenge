@@ -7,6 +7,34 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  //SOLUTION 4
+  return str.split('').every( (char, i) => {
+    return char === str[str.length - i -1];
+  });
+  // this will check twice so it is not ideal solution but you can explain this to your interviewer.
+}
+
+module.expo
+
+// SOLUTION 1
+// let reverseStr = strArr.reduce( (reversed, character) => {
+//   return character + reversed;
+// });
+
+// SOLUTION 2
+// let reverseStr = str.split('').reverse().join('');
+// return str === reverseStr;
+
+
+// SOLUTION 3
+// let reverseStr = "";
+//
+// for(character of str) {
+//     reverseStr = character + reverseStr;
+// }
+
+
+
 
 module.exports = palindrome;
