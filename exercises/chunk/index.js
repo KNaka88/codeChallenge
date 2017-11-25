@@ -9,17 +9,35 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
-  //SOLUTION 2
 
-  const chunked = [];
-  let index = 0;
+  // MY SOLUTION
+  //1. initialize array
+  let chunked = [];
+  let master = [];
 
-  while (index < array.length) {
-    chunked.push(array.slice(index, index + size));
-    index += size;
+  //2. interate array
+  for (let element of array) {
+
+    chunked.push(element);
+
+    if (chunked.length === size || element === array[array.length-1]) {
+      master.push(chunked);
+      chunked = [];
+    }
   }
 
-  return chunked;
+  return master;
+
+  //2
+  // const chunked = [];
+  // let index = 0;
+  //
+  // while (index < array.length) {
+  //   chunked.push(array.slice(index, index + size));
+  //   index += size;
+  // }
+  //
+  // return chunked;
 }
 
 
